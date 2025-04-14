@@ -11,23 +11,20 @@ return {
       },
     },
   },
-  {
+{
   'saghen/blink.cmp',
   event = 'InsertEnter',
   dependencies = { 'rafamadriz/friendly-snippets', {
     'saghen/blink.compat', 
     optional = true, 
-    opts = {},
     version = '*'
   } },
-
   -- use a release tag to download pre-built binaries
   version = '*',
   build = 'cargo build --release',
-
   opts_extend = {
     'sources.completion.enabled_providers',
-    'sources.compat',
+    -- Remove 'sources.compat' from here
     'sources.default',
   },
   ---@module 'blink.cmp'
@@ -36,7 +33,6 @@ return {
     appearance = {
       nerd_font_variant = 'normal'
     },
-    -- (Default) Only show the documentation popup when manually triggered
     completion = { 
       accept = { 
         auto_brackets = {
@@ -56,16 +52,14 @@ return {
         enabled = true,
       },
     },
-    -- Default list of enabled providers defined so that you can extend it
-    -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      compat = true,
+      -- Remove the 'compat = true' line
       default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', },
       providers = {
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
-          source_offset = 100, -- Set higher prio than lsp
+          source_offset = 100,
         }
       }
     },
@@ -77,7 +71,7 @@ return {
       ['<C-y>'] = { 'select_and_accept' },
     },
   },
-}, 
+},
 {
   'echasnovski/mini.pairs', 
   event = 'VeryLazy',
