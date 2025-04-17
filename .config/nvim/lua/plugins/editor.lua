@@ -1,11 +1,12 @@
 return {
-'tpope/vim-sleuth',
-{ 'MagicDuck/grug-far.nvim', 
-opts =  { headerMaxWidth = 80 },
-cmd = 'GrugFar'
--- TODO: Add grug-far keys
-},
-{
+  'tpope/vim-sleuth',
+  {
+    'MagicDuck/grug-far.nvim',
+    opts = { headerMaxWidth = 80 },
+    cmd = 'GrugFar'
+    -- TODO: Add grug-far keys
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     vscode = true,
@@ -13,11 +14,11 @@ cmd = 'GrugFar'
     opts = {},
     -- stylua: ignore
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "o", "x" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
   },
   {
@@ -32,7 +33,7 @@ cmd = 'GrugFar'
           mode = { "n", "v" },
           -- TODO: Add keys step by step, so we know the keys and can implement them one after a another
           -- { "<leader><tab>", group = "tabs" },
-          -- { "<leader>c", group = "code" },
+          { "<leader>c", group = "code" },
           -- { "<leader>d", group = "debug" },
           -- { "<leader>dp", group = "profiler" },
           -- { "<leader>f", group = "file/find" },
@@ -84,7 +85,7 @@ cmd = 'GrugFar'
       -- },
     },
   },
- {
+  {
     "lewis6991/gitsigns.nvim",
     event = 'LazyFile',
     opts = {
@@ -141,7 +142,7 @@ cmd = 'GrugFar'
       end,
     },
   },
-{
+  {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = "LazyFile",
