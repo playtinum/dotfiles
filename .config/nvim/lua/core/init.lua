@@ -13,5 +13,19 @@ require('core.options')
 -- Setup auto-commands
 require('core.autocmds')
 
+-- Load utilities
+require('utils')
+
 -- Bootstrap our the plugin manager
-require('lazy').setup('plugins')
+require('lazy').setup({
+  spec = {
+    { import = 'plugins' },
+  },
+  install = {
+    colorscheme = {
+      'tokyonight-night',
+      'habamax'
+    }
+  }
+})
+

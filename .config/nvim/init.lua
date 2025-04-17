@@ -19,5 +19,3 @@ vim.opt.rtp:prepend(lazypath)
 -- Load core settings
 require('core')
 
--- Load utilities
-require('utils')
