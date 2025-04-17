@@ -22,11 +22,6 @@ return {
   -- use a release tag to download pre-built binaries
   version = '*',
   build = 'cargo build --release',
-  opts_extend = {
-    'sources.completion.enabled_providers',
-    -- Remove 'sources.compat' from here
-    'sources.default',
-  },
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
@@ -59,7 +54,7 @@ return {
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
-          source_offset = 100,
+          score_offset = 100,
         }
       }
     },
