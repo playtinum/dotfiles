@@ -1,5 +1,9 @@
 indent_type = "Spaces"
 indent_width = 2
 column_width = 120
+column_table_width = 0
+table_separator_style = "OnlyComma"
+call_parentheses = "Always"
+quote_style = "AutoPreferSingle"
 [sort_requires]
 enabled = true
