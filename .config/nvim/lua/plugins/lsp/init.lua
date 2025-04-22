@@ -37,26 +37,22 @@ return {
         end
       end)
 
-      -- 3. Set up inlay hints for Neovim 0.10+
-      if vim.fn.has("nvim-0.10") == 1 then
-        lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
-          -- Only enable if the buffer has a file type
-          if vim.api.nvim_buf_is_valid(buffer) and vim.bo[buffer].buftype == "" then
-            vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
-          end
-        end)
-      end
+      -- 3. Set up inlay hints
+      lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
+        -- Only enable if the buffer has a file type
+        if vim.api.nvim_buf_is_valid(buffer) and vim.bo[buffer].buftype == "" then
+          vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
+        end
+      end)
 
-      -- 4. Set up code lens support for Neovim 0.10+
-      if vim.fn.has("nvim-0.10") == 1 and vim.lsp.codelens then
-        lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
-          vim.lsp.codelens.refresh()
-          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-            buffer = buffer,
-            callback = vim.lsp.codelens.refresh,
-          })
-        end)
-      end
+      -- 4. Set up code lens support
+      lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
+        vim.lsp.codelens.refresh()
+        vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+          buffer = buffer,
+          callback = vim.lsp.codelens.refresh,
+        })
+      end)
 
       -- 5. Server-specific configuration
       local servers = require('plugins.lsp.servers')

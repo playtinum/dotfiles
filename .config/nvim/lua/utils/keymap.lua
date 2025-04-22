@@ -5,7 +5,7 @@ function M.set(modes, lhs, rhs, desc, opts)
   opts = opts or {}
   if desc then opts.desc = desc end
   if type(modes) == "string" then modes = { modes } end
-  
+
   for _, mode in ipairs(modes) do
     vim.keymap.set(mode, lhs, rhs, opts)
   end

@@ -6,8 +6,21 @@ M.lua_ls = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
       diagnostics = { globals = { "vim" } },
-      hint = { enable = true },
       completion = { callSnippet = "Replace" },
+      codeLens = {
+        enable = true,
+      },
+      doc = {
+        privateName = { "^_" },
+      },
+      hint = {
+        enable = true,
+        setType = false,
+        paramType = true,
+        paramName = "Disable",
+        semicolon = "Disable",
+        arrayIndex = "Disable",
+      },
     },
   },
 }
