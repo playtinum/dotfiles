@@ -1,14 +1,14 @@
 return {
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     theme = 'auto',
-  --     globalstatus = vim.o.laststatus == 3,
-  --     disable_filetypes = { statusline = { 'snacks_dashboard' } },
-  --   }
-  --   -- TODO: add better filepath
-  -- },
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = {
+      theme = 'auto',
+      globalstatus = vim.o.laststatus == 3,
+      disable_filetypes = { statusline = { 'snacks_dashboard' } },
+    }
+    -- TODO: add better filepath
+  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -29,17 +29,6 @@ return {
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
     end,
-  },
-  {
-    'echasnovski/mini.statusline',
-    version = false,
-    event = 'VeryLazy',
-    opts = {
-      use_icons = true,
-      section_location = function()
-        return '%2l:%-2v'
-      end
-    },
   },
   -- {
   --   'echasnovski/mini.icons',
