@@ -5,9 +5,10 @@ return {
   keys = { {
     '<leader>cf',
     function()
+      test()
       require('conform').format({ lsp_format = 'fallback', timeout_ms = 3000 })
     end,
-    mode = {'n', 'v'},
+    mode = { 'n', 'v' },
     desc = 'Format buffer',
   } },
   opts = {

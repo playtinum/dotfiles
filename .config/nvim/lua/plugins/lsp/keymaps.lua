@@ -68,7 +68,7 @@ function M.has(buffer, method)
   -- Check if any client supports this method
   local clients = vim.lsp.get_clients({ bufnr = buffer })
   for _, client in ipairs(clients) do
-    if client.supports_method(method) then
+    if client:supports_method(method) then
       return true
     end
   end

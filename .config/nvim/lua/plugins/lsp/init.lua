@@ -7,9 +7,6 @@ return {
       -- Automatically install LSPs to stdpath for neovim
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
-
-      -- Optional dependencies
-      -- { "hrsh7th/cmp-nvim-lsp" }, -- Uncomment if you use nvim-cmp
     },
     config = function()
       -- Import the lsp modules
@@ -25,7 +22,7 @@ return {
 
         -- Add additional client-specific settings here if needed
         -- For example: document highlighting
-        if client.supports_method("textDocument/documentHighlight") then
+        if client:supports_method("textDocument/documentHighlight") then
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             buffer = buffer,
             callback = vim.lsp.buf.document_highlight,

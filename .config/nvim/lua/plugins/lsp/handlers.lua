@@ -65,7 +65,7 @@ end
 -- Helper function to attach specific method handlers
 function M.on_supports_method(method, callback)
   M.on_attach(function(client, buffer)
-    if client.supports_method(method) then
+    if client:supports_method(method) then
       callback(client, buffer)
     end
   end)
@@ -107,7 +107,7 @@ function M.format_document(opts)
   local clients = M.get_clients({
     bufnr = bufnr,
     filter = function(client)
-      return client.supports_method("textDocument/formatting")
+      return client:supports_method("textDocument/formatting")
     end,
   })
 
