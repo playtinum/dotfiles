@@ -1,2 +1,2 @@
--- Load core, that sets up everything needed
-require('core')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
