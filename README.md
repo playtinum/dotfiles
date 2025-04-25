@@ -42,3 +42,9 @@ Install [Homebrew](www.brew.sh) for easy installation of software
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+### NeoVim
+
+```bash
+brew install neovim git lazygit gcc curl nvm fzf ripgrep fd
+```
